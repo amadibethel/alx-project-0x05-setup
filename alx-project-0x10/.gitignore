@@ -62,4 +62,5 @@ dist/
 
 # Ignore large binaries
 *.node
+node_modules/.next/
 node_modules/
