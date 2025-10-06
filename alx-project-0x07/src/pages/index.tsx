@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-
 const Home: React.FC = () => {
+  const [prompt, setPrompt] = useState("");
+
   const handleGenerateImage = async () => {
-    console.log("Generating Images")
+    console.log("Generating Images for prompt:", prompt);
   };
 
   return (
@@ -18,6 +19,8 @@ const Home: React.FC = () => {
           <input
             type="text"
             placeholder="Enter your prompt here..."
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
             className="w-full p-3 border border-gray-300 rounded-lg mb-4"
           />
           <button
@@ -28,9 +31,8 @@ const Home: React.FC = () => {
           </button>
         </div>
       </div>
-     </div>
+    </div>
   );
 };
 
 export default Home;
-
